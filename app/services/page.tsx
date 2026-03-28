@@ -191,7 +191,7 @@ export default function ServicesPage() {
                 asChild
               >
                 <a
-                  href="https://www.doctolib.com"
+                  href={process.env.NEXT_PUBLIC_DOCTOLIB_URL} 
                   target="_blank"
                   rel="noopener noreferrer"
                 >

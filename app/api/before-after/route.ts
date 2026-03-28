@@ -9,6 +9,15 @@ const supabase = createClient(
 // GET: Retrieve before/after gallery for a service
 export async function GET(request: NextRequest) {
   try {
+    // Validate environment variables
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      console.error('Missing Supabase environment variables');
+      return NextResponse.json(
+        { error: 'Server configuration error: Missing Supabase credentials' },
+        { status: 500 }
+      );
+    }
+
     const serviceType = request.nextUrl.searchParams.get('serviceType');
 
     let query = supabase
@@ -23,11 +32,16 @@ export async function GET(request: NextRequest) {
     const { data, error } = await query;
 
     if (error) {
-      return NextResponse.json({ error: error.message }, { status: 400 });
+      console.error('Supabase query error:', error);
+      return NextResponse.json(
+        { error: `Database error: ${error.message}` },
+        { status: 400 }
+      );
     }
 
     return NextResponse.json(data);
   } catch (error) {
+    console.error('Before-after gallery API error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

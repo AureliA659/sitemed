@@ -152,7 +152,10 @@ export function Navbar() {
               asChild
               className="hidden sm:flex bg-medical-blue hover:bg-medical-blue-dark text-white"
             >
-              <a href="#book-appointment">
+              <a 
+                href={process.env.NEXT_PUBLIC_DOCTOLIB_URL}  
+                target="_blank" 
+                rel="noopener noreferrer">
                 <Calendar className="w-4 h-4 mr-2" />
                 Book Appointment
               </a>

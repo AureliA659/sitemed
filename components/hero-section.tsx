@@ -36,7 +36,11 @@ export function HeroSection() {
               className="bg-health-green hover:bg-health-green-dark text-white text-lg px-8 py-6 h-auto"
               asChild
             >
-              <a href="#book-appointment">
+              <a 
+                href={process.env.NEXT_PUBLIC_DOCTOLIB_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 <Calendar className="w-5 h-5 mr-2" />
                 Book an Appointment
               </a>

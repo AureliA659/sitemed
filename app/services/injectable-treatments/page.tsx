@@ -169,7 +169,11 @@ export default function InjectableTreatmentsPage() {
                 asChild
                 className="w-full bg-medical-blue hover:bg-medical-blue-dark text-white mb-4 h-12"
               >
-                <a href="#book-appointment">Book Appointment</a>
+                <a 
+                href={process.env.NEXT_PUBLIC_DOCTOLIB_URL} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                >Book Appointment</a>
               </Button>
               <Button
                 asChild
