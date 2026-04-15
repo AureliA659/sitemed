@@ -41,6 +41,15 @@ export function middleware(request: NextRequest) {
     );
   }
 
+  // Protect /admin route
+  if (request.nextUrl.pathname.startsWith('/admin')) {
+    const token = request.cookies.get('adminToken')?.value;
+
+    if (!token) {
+      return NextResponse.redirect(new URL('/login', request.url));
+    }
+  }
+
   // Create response with security headers
   const response = NextResponse.next();
 

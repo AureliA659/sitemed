@@ -1,9 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Trash2, Upload, AlertCircle, CheckCircle } from 'lucide-react';
+import { Trash2, Upload, AlertCircle, CheckCircle, LogOut } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 interface BeforeAfter {
@@ -22,6 +23,7 @@ const services = [
 ];
 
 export default function AdminPage() {
+  const router = useRouter();
   const { toast } = useToast();
   const [serviceType, setServiceType] = useState('laser-hair-removal');
   const [beforeImage, setBeforeImage] = useState<File | null>(null);
@@ -35,6 +37,13 @@ export default function AdminPage() {
   useEffect(() => {
     fetchGallery();
   }, [serviceType]);
+
+  const handleLogout = () => {
+    // Clear cookies and localStorage
+    document.cookie = 'adminToken=; path=/; max-age=0';
+    localStorage.removeItem('adminToken');
+    router.push('/login');
+  };
 
   const fetchGallery = async () => {
     try {
@@ -162,8 +171,20 @@ export default function AdminPage() {
   return (
     <div className="min-h-screen pt-20 pb-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-2">Admin Panel</h1>
-        <p className="text-gray-600 mb-12">Manage before/after gallery for services</p>
+        <div className="flex justify-between items-start mb-12">
+          <div>
+            <h1 className="text-4xl font-bold mb-2">Admin Panel</h1>
+            <p className="text-gray-600">Manage before/after gallery for services</p>
+          </div>
+          <Button
+            onClick={handleLogout}
+            variant="outline"
+            className="flex items-center gap-2"
+          >
+            <LogOut className="w-4 h-4" />
+            Logout
+          </Button>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Upload Form */}
