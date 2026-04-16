@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import { useTranslations } from 'next-intl';
 
 interface Message {
   id: string;
@@ -15,12 +16,13 @@ interface Message {
 }
 
 export function ChatWidget() {
+  const t = useTranslations('chat');
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
       role: 'assistant',
-      message: 'Hello! How can we help you today?',
+      message: t('greeting'),
       timestamp: new Date().toISOString(),
     },
   ]);
@@ -68,15 +70,15 @@ export function ChatWidget() {
       const assistantMessage: Message = {
         id: data.id,
         role: 'assistant',
-        message: 'Thank you for your message. Our team will get back to you soon! For immediate assistance, please call us at (123) 456-7890.',
+        message: t('autoReply'),
         timestamp: new Date().toISOString(),
       };
       setMessages(prev => [...prev, assistantMessage]);
     } catch (error) {
       console.error('Chat error:', error);
       toast({
-        title: 'Error',
-        description: 'Failed to send message. Please try again.',
+        title: t('errorTitle'),
+        description: t('errorMessage'),
         variant: 'destructive',
       });
     } finally {
@@ -98,7 +100,7 @@ export function ChatWidget() {
           <CardHeader className="bg-medical-blue text-white rounded-t-lg">
             <div className="flex items-center justify-between">
               <CardTitle className="text-lg font-heading">
-                Chat with Us
+                {t('title')}
               </CardTitle>
               <Button
                 variant="ghost"
@@ -146,7 +148,7 @@ export function ChatWidget() {
           <div className="border-t border-gray-200 p-4 bg-gray-50">
             <div className="flex gap-2">
               <Input
-                placeholder="Type your message..."
+                placeholder={t('placeholder')}
                 className="flex-1"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}

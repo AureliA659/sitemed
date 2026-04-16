@@ -1,7 +1,12 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Calendar, ArrowRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export function HeroSection() {
+  const t = useTranslations('hero');
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div
@@ -19,15 +24,13 @@ export function HeroSection() {
       <div className="container mx-auto px-4 py-32 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-white mb-6 text-balance">
-            Excellence in Medical Care
+            {t('title')}
             <br />
-            <span className="text-health-green">Scientific Precision</span>
+            <span className="text-health-green">{t('titleHighlight')}</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed max-w-2xl mx-auto">
-            Our team of four specialized physicians combines cutting-edge
-            medical science with personalized care to deliver exceptional
-            treatment outcomes.
+            {t('subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -42,7 +45,7 @@ export function HeroSection() {
                 rel="noopener noreferrer"
               >
                 <Calendar className="w-5 h-5 mr-2" />
-                Book an Appointment
+                {t('cta')}
               </a>
             </Button>
 
@@ -53,7 +56,7 @@ export function HeroSection() {
               asChild
             >
               <a href="#services">
-                Explore Our Services
+                {t('exploreServices')}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </a>
             </Button>
@@ -65,7 +68,7 @@ export function HeroSection() {
                 4
               </div>
               <div className="text-white/80 text-sm md:text-base">
-                Specialized Physicians
+                {t('stats.physicians')}
               </div>
             </div>
             <div className="text-center">
@@ -73,7 +76,7 @@ export function HeroSection() {
                 15+
               </div>
               <div className="text-white/80 text-sm md:text-base">
-                Years Experience
+                {t('stats.experience')}
               </div>
             </div>
             <div className="text-center">
@@ -81,7 +84,7 @@ export function HeroSection() {
                 10k+
               </div>
               <div className="text-white/80 text-sm md:text-base">
-                Patients Treated
+                {t('stats.patients')}
               </div>
             </div>
             <div className="text-center">
@@ -89,7 +92,7 @@ export function HeroSection() {
                 98%
               </div>
               <div className="text-white/80 text-sm md:text-base">
-                Satisfaction Rate
+                {t('stats.satisfaction')}
               </div>
             </div>
           </div>

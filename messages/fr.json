@@ -1,0 +1,158 @@
+{
+  "common": {
+    "language": "Langue",
+    "english": "English",
+    "french": "Français"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "services": "Services",
+    "laserHairRemoval": "Épilation au Laser",
+    "injectableTreatments": "Traitements Injectables",
+    "skinRejuvenation": "Rajeunissement de la Peau",
+    "team": "Équipe",
+    "blog": "Blog",
+    "contact": "Contact",
+    "admin": "Admin",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "book": "Prendre rendez-vous"
+  },
+  "hero": {
+    "title": "L'Excellence en Soins Médicaux",
+    "titleHighlight": "Précision Scientifique",
+    "subtitle": "Notre équipe de quatre médecins spécialisés allie science médicale de pointe et soins personnalisés pour offrir des résultats de traitement exceptionnels.",
+    "cta": "Prendre Rendez-vous",
+    "exploreServices": "Découvrir Nos Services",
+    "stats": {
+      "physicians": "Médecins Spécialisés",
+      "experience": "Ans d'Expérience",
+      "patients": "Patients Traités",
+      "satisfaction": "Taux de Satisfaction"
+    }
+  },
+  "services": {
+    "title": "Nos Services Médicaux",
+    "subtitle": "Des solutions de soins complètes dispensées par notre équipe de médecins spécialisés utilisant les dernières avancées médicales.",
+    "laserHairRemoval": "Épilation au Laser",
+    "laserHairRemovalDesc": "Technologie laser avancée pour une réduction permanente des poils avec un minimum d'inconfort et un maximum de résultats.",
+    "injectableTreatments": "Traitements Injectables",
+    "injectableTreatmentsDesc": "Administration experte de comblements dermiques et neuromodulateurs pour un rajeunissement facial d'apparence naturelle.",
+    "skinRejuvenation": "Rajeunissement de la Peau",
+    "skinRejuvenationDesc": "Traitements complets pour restaurer la vitalité, la texture et la luminosité de la peau à l'aide de procédures de qualité médicale.",
+    "consultations": "Consultations Médicales",
+    "consultationsDesc": "Consultations approfondies avec nos spécialistes pour élaborer des plans de traitement personnalisés.",
+    "discoverMore": "En Savoir Plus",
+    "viewAll": "Voir Tous les Services",
+    "learnMore": "En savoir plus"
+  },
+  "team": {
+    "title": "Notre Équipe Médicale",
+    "subtitle": "Découvrez notre équipe de quatre médecins spécialisés dédiés à prodiguer des soins exceptionnels avec précision scientifique et bienveillance.",
+    "yearsExperience": "Ans d'Expérience",
+    "boardCertified": "Certifié",
+    "doctors": {
+      "mitchell": {
+        "name": "Dr. Sarah Mitchell",
+        "specialty": "Dermatologie & Médecine Esthétique",
+        "bio": "Dermatologue certifiée avec plus de 15 ans d'expérience en dermatologie médicale et cosmétique. Spécialisée dans les traitements laser avancés et les procédures injectables.",
+        "education": "MD, Harvard Medical School"
+      },
+      "chen": {
+        "name": "Dr. Michael Chen",
+        "specialty": "Chirurgie Plastique & Reconstruction",
+        "bio": "Chirurgien plasticien renommé spécialisé dans le rajeunissement facial et les procédures esthétiques non chirurgicales. Reconnu pour ses résultats naturels et ses soins centrés sur le patient.",
+        "education": "MD, Johns Hopkins University"
+      },
+      "rodriguez": {
+        "name": "Dr. Emily Rodriguez",
+        "specialty": "Esthétique Médicale & Thérapie Laser",
+        "bio": "Experte en technologies laser de pointe et procédures esthétiques minimalement invasives. Engagée dans les traitements fondés sur des preuves et les résultats optimaux pour les patients.",
+        "education": "MD, Stanford University"
+      },
+      "anderson": {
+        "name": "Dr. James Anderson",
+        "specialty": "Médecine Cosmétique & Injectables",
+        "bio": "Hautement qualifié en techniques d'injection avancées et en anatomie faciale. Se concentre sur des plans de traitement personnalisés qui subliment la beauté naturelle tout en maintenant l'harmonie du visage.",
+        "education": "MD, Yale School of Medicine"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Témoignages de Patients",
+    "subtitle": "Découvrez ce que nos patients disent de leur expérience avec notre équipe médicale et de la qualité des soins qu'ils ont reçus.",
+    "averageRating": "Note Moyenne",
+    "patientReviews": "Avis de Patients",
+    "wouldRecommend": "Recommanderaient"
+  },
+  "cta": {
+    "title": "Prêt à Commencer Votre Parcours ?",
+    "subtitle": "Planifiez une consultation avec l'un de nos médecins spécialisés et découvrez comment nous pouvons vous aider à atteindre vos objectifs de santé et de bien-être.",
+    "bookDoctolib": "Réserver sur Doctolib",
+    "call": "Appeler",
+    "availability": "Disponible du lundi au vendredi, de 9h00 à 18h00"
+  },
+  "contact": {
+    "title": "Nous Contacter",
+    "subtitle": "Nous sommes là pour répondre à vos questions et vous aider à planifier votre visite. Contactez notre équipe dès aujourd'hui.",
+    "getInTouch": "Nous Contacter",
+    "location": "Localisation",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email",
+    "hours": "Heures d'Ouverture",
+    "directions": "Obtenir l'itinéraire",
+    "weekday": "Lundi - Vendredi : 9h00 - 18h00",
+    "saturday": "Samedi : 10h00 - 16h00",
+    "sunday": "Dimanche : Fermé",
+    "bookAppointment": "Réserver un rendez-vous en ligne",
+    "parking": "Informations de Stationnement",
+    "parkingInfo": "Un stationnement gratuit validé est disponible dans le garage souterrain de l'immeuble. Entrez par Market Street et apportez votre billet à la réception pour validation.",
+    "addressFull": "123 Plaza Médicale, Suite 100, San Francisco, CA 94102, États-Unis",
+    "phone_number": "(123) 456-7890",
+    "phone_hours": "Lundi - Vendredi : 9h00 - 18h00",
+    "email_address": "info@medicalexcellence.com",
+    "email_response": "Nous répondrons dans les 24 heures"
+  },
+  "footer": {
+    "description": "Centre médical de premier plan offrant des soins de santé experts avec quatre médecins spécialisés dédiés à votre bien-être.",
+    "quickLinks": "Liens Rapides",
+    "home": "Accueil",
+    "services": "Services",
+    "ourTeam": "Notre Équipe",
+    "blog": "Blog",
+    "contact": "Contact",
+    "servicesTitle": "Services",
+    "laserHairRemoval": "Épilation au Laser",
+    "injectableTreatments": "Traitements Injectables",
+    "skinRejuvenation": "Rajeunissement de la Peau",
+    "consultations": "Consultations Médicales",
+    "contactUs": "Nous Contacter",
+    "schedule": "Lun-Ven : 9h-18h",
+    "copyright": "Centre d'Excellence Médicale. Tous droits réservés.",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation"
+  },
+  "chat": {
+    "title": "Assistant Médical",
+    "greeting": "Bonjour ! Comment pouvons-nous vous aider aujourd'hui ?",
+    "autoReply": "Merci pour votre message. Notre équipe vous répondra bientôt ! Pour une assistance immédiate, veuillez nous appeler au (123) 456-7890.",
+    "placeholder": "Tapez un message...",
+    "errorTitle": "Erreur",
+    "errorMessage": "Échec de l'envoi du message. Veuillez réessayer."
+  },
+  "beforeAfter": {
+    "title": "Résultats Réels",
+    "before": "Avant",
+    "after": "Après",
+    "of": "sur"
+  },
+  "buttons": {
+    "book": "Réserver",
+    "learnMore": "En savoir plus",
+    "viewMore": "Voir plus",
+    "send": "Envoyer le message",
+    "cancel": "Annuler",
+    "submit": "Soumettre"
+  }
+}

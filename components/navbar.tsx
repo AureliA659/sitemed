@@ -2,9 +2,11 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Calendar, Menu, X, ChevronDown } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { LanguageSwitcher } from './language-switcher';
 
 interface NavItem {
   label: string;
@@ -12,29 +14,30 @@ interface NavItem {
   children?: { label: string; href: string }[];
 }
 
-const navigationItems: NavItem[] = [
-  { label: 'Home', href: '/' },
-  {
-    label: 'Services',
-    href: '/services',
-    children: [
-      { label: 'All Services', href: '/services' },
-      { label: 'Laser Hair Removal', href: '/services/laser-hair-removal' },
-      { label: 'Injectable Treatments', href: '/services/injectable-treatments' },
-      { label: 'Skin Rejuvenation', href: '/services/skin-rejuvenation' },
-    ],
-  },
-  { label: 'Our Team', href: '/team' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Contact', href: '/contact' },
-];
-
 export function Navbar() {
+  const t = useTranslations('navigation');
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const hoverTimeoutRef = useRef<NodeJS.Timeout>();
+
+  const navigationItems: NavItem[] = [
+    { label: t('home'), href: '/' },
+    {
+      label: t('services'),
+      href: '/services',
+      children: [
+        { label: t('services'), href: '/services' },
+        { label: t('laserHairRemoval'), href: '/services/laser-hair-removal' },
+        { label: t('injectableTreatments'), href: '/services/injectable-treatments' },
+        { label: t('skinRejuvenation'), href: '/services/skin-rejuvenation' },
+      ],
+    },
+    { label: t('team'), href: '/team' },
+    { label: t('blog'), href: '/blog' },
+    { label: t('contact'), href: '/contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -147,7 +150,9 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-7">
+            <LanguageSwitcher />
+            
             <Button
               asChild
               className="hidden sm:flex bg-medical-blue hover:bg-medical-blue-dark text-white"
@@ -157,7 +162,7 @@ export function Navbar() {
                 target="_blank" 
                 rel="noopener noreferrer">
                 <Calendar className="w-4 h-4 mr-2" />
-                Book Appointment
+                {t('book')}
               </a>
             </Button>
 
@@ -177,9 +182,9 @@ export function Navbar() {
                     asChild
                     className="w-full bg-medical-blue hover:bg-medical-blue-dark text-white"
                   >
-                    <a href="#book-appointment">
+                    <a href={process.env.NEXT_PUBLIC_DOCTOLIB_URL} target="_blank" rel="noopener noreferrer">
                       <Calendar className="w-4 h-4 mr-2" />
-                      Book Appointment
+                      {t('book')}
                     </a>
                   </Button>
 

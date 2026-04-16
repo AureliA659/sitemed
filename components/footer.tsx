@@ -1,7 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Calendar } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export function Footer() {
+  const t = useTranslations('footer');
+
   return (
     <footer className="bg-[#212121] text-white">
       <div className="container mx-auto px-4 py-12">
@@ -16,14 +21,13 @@ export function Footer() {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Premier medical center offering expert healthcare with four
-              specialized physicians dedicated to your wellbeing.
+              {t('description')}
             </p>
           </div>
 
           <div>
             <h4 className="font-heading font-semibold text-lg mb-4">
-              Quick Links
+              {t('quickLinks')}
             </h4>
             <ul className="space-y-2">
               <li>
@@ -31,7 +35,7 @@ export function Footer() {
                   href="/"
                   className="text-gray-400 hover:text-health-green transition-colors"
                 >
-                  Home
+                  {t('home')}
                 </Link>
               </li>
               <li>
@@ -39,7 +43,7 @@ export function Footer() {
                   href="/services"
                   className="text-gray-400 hover:text-health-green transition-colors"
                 >
-                  Services
+                  {t('services')}
                 </Link>
               </li>
               <li>
@@ -47,7 +51,7 @@ export function Footer() {
                   href="/team"
                   className="text-gray-400 hover:text-health-green transition-colors"
                 >
-                  Our Team
+                  {t('ourTeam')}
                 </Link>
               </li>
               <li>
@@ -55,7 +59,7 @@ export function Footer() {
                   href="/blog"
                   className="text-gray-400 hover:text-health-green transition-colors"
                 >
-                  Blog
+                  {t('blog')}
                 </Link>
               </li>
               <li>
@@ -63,7 +67,7 @@ export function Footer() {
                   href="/contact"
                   className="text-gray-400 hover:text-health-green transition-colors"
                 >
-                  Contact
+                  {t('contact')}
                 </Link>
               </li>
             </ul>
@@ -71,7 +75,7 @@ export function Footer() {
 
           <div>
             <h4 className="font-heading font-semibold text-lg mb-4">
-              Services
+              {t('servicesTitle')}
             </h4>
             <ul className="space-y-2">
               <li>
@@ -79,7 +83,7 @@ export function Footer() {
                   href="/services/laser-hair-removal"
                   className="text-gray-400 hover:text-health-green transition-colors"
                 >
-                  Laser Hair Removal
+                  {t('laserHairRemoval')}
                 </Link>
               </li>
               <li>
@@ -87,7 +91,7 @@ export function Footer() {
                   href="/services/injectable-treatments"
                   className="text-gray-400 hover:text-health-green transition-colors"
                 >
-                  Injectable Treatments
+                  {t('injectableTreatments')}
                 </Link>
               </li>
               <li>
@@ -95,7 +99,7 @@ export function Footer() {
                   href="/services/skin-rejuvenation"
                   className="text-gray-400 hover:text-health-green transition-colors"
                 >
-                  Skin Rejuvenation
+                  {t('skinRejuvenation')}
                 </Link>
               </li>
               <li>
@@ -103,7 +107,7 @@ export function Footer() {
                   href="/services/consultations"
                   className="text-gray-400 hover:text-health-green transition-colors"
                 >
-                  Medical Consultations
+                  {t('consultations')}
                 </Link>
               </li>
             </ul>
@@ -111,15 +115,15 @@ export function Footer() {
 
           <div>
             <h4 className="font-heading font-semibold text-lg mb-4">
-              Contact Us
+              {t('contactUs')}
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-health-green mt-0.5 flex-shrink-0" />
                 <span className="text-gray-400 text-sm">
-                  123 Medical Plaza, Suite 100
+                  211 boulevard Bineau
                   <br />
-                  San Francisco, CA 94102
+                  92200 Neuilly-sur-Seine
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -142,7 +146,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Calendar className="w-5 h-5 text-health-green flex-shrink-0" />
-                <span className="text-gray-400 text-sm">Mon-Fri: 9AM-6PM</span>
+                <span className="text-gray-400 text-sm">{t('schedule')}</span>
               </li>
             </ul>
           </div>
@@ -151,20 +155,20 @@ export function Footer() {
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              &copy; 2024 Medical Excellence Center. All rights reserved.
+              &copy; 2024 {t('copyright')}
             </p>
             <div className="flex gap-6">
               <Link
                 href="/privacy"
                 className="text-gray-400 hover:text-health-green transition-colors text-sm"
               >
-                Privacy Policy
+                {t('privacy')}
               </Link>
               <Link
                 href="/terms"
                 className="text-gray-400 hover:text-health-green transition-colors text-sm"
               >
-                Terms of Service
+                {t('terms')}
               </Link>
             </div>
           </div>

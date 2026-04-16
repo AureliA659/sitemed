@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import {
   Carousel,
   CarouselContent,
@@ -13,8 +14,8 @@ import { Card, CardContent } from '@/components/ui/card';
 
 interface Service {
   id: string;
-  title: string;
-  description: string;
+  titleKey: string;
+  descKey: string;
   image: string;
   href: string;
 }
@@ -22,36 +23,32 @@ interface Service {
 const services: Service[] = [
   {
     id: '1',
-    title: 'Laser Hair Removal',
-    description:
-      'Advanced laser technology for permanent hair reduction with minimal discomfort and maximum results.',
+    titleKey: 'laserHairRemoval',
+    descKey: 'laserHairRemovalDesc',
     image:
       'https://images.pexels.com/photos/3985320/pexels-photo-3985320.jpeg?auto=compress&cs=tinysrgb&w=800',
     href: '/services/laser-hair-removal',
   },
   {
     id: '2',
-    title: 'Injectable Treatments',
-    description:
-      'Expert administration of dermal fillers and neuromodulators for natural-looking facial rejuvenation.',
+    titleKey: 'injectableTreatments',
+    descKey: 'injectableTreatmentsDesc',
     image:
       'https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=800',
     href: '/services/injectable-treatments',
   },
   {
     id: '3',
-    title: 'Skin Rejuvenation',
-    description:
-      'Comprehensive treatments to restore skin vitality, texture, and luminosity using medical-grade procedures.',
+    titleKey: 'skinRejuvenation',
+    descKey: 'skinRejuvenationDesc',
     image:
       'https://images.pexels.com/photos/3852159/pexels-photo-3852159.jpeg?auto=compress&cs=tinysrgb&w=800',
     href: '/services/skin-rejuvenation',
   },
   {
     id: '4',
-    title: 'Medical Consultations',
-    description:
-      'In-depth consultations with our specialists to develop personalized treatment plans.',
+    titleKey: 'consultations',
+    descKey: 'consultationsDesc',
     image:
       'https://images.pexels.com/photos/4173251/pexels-photo-4173251.jpeg?auto=compress&cs=tinysrgb&w=800',
     href: '/services/consultations',
@@ -59,14 +56,15 @@ const services: Service[] = [
 ];
 
 export function ServicesCarousel() {
+  const t = useTranslations('services');
+
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-medical-blue mb-4">Our Medical Services</h2>
+          <h2 className="text-medical-blue mb-4">{t('title')}</h2>
           <p className="text-lg text-[#424242] max-w-2xl mx-auto">
-            Comprehensive healthcare solutions delivered by our team of
-            specialized physicians using the latest medical advancements.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -88,23 +86,23 @@ export function ServicesCarousel() {
                     <div className="relative h-56 overflow-hidden">
                       <img
                         src={service.image}
-                        alt={service.title}
+                        alt={t(service.titleKey)}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-heading font-semibold text-[#212121] mb-3">
-                        {service.title}
+                        {t(service.titleKey)}
                       </h3>
                       <p className="text-[#424242] mb-4 leading-relaxed">
-                        {service.description}
+                        {t(service.descKey)}
                       </p>
                       <Link
                         href={service.href}
                         className="inline-flex items-center text-medical-blue hover:text-medical-blue-dark font-medium transition-colors group/link"
                       >
-                        Discover More
+                        {t('discoverMore')}
                         <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
                       </Link>
                     </div>
@@ -122,7 +120,7 @@ export function ServicesCarousel() {
             href="/services"
             className="inline-flex items-center text-medical-blue hover:text-medical-blue-dark font-semibold text-lg transition-colors group"
           >
-            View All Services
+            {t('viewAll')}
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

@@ -1,0 +1,158 @@
+{
+  "common": {
+    "language": "Language",
+    "english": "English",
+    "french": "Français"
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "laserHairRemoval": "Laser Hair Removal",
+    "injectableTreatments": "Injectable Treatments",
+    "skinRejuvenation": "Skin Rejuvenation",
+    "team": "Team",
+    "blog": "Blog",
+    "contact": "Contact",
+    "admin": "Admin",
+    "login": "Login",
+    "logout": "Logout",
+    "book": "Book Appointment"
+  },
+  "hero": {
+    "title": "Excellence in Medical Care",
+    "titleHighlight": "Scientific Precision",
+    "subtitle": "Our team of four specialized physicians combines cutting-edge medical science with personalized care to deliver exceptional treatment outcomes.",
+    "cta": "Book an Appointment",
+    "exploreServices": "Explore Our Services",
+    "stats": {
+      "physicians": "Specialized Physicians",
+      "experience": "Years Experience",
+      "patients": "Patients Treated",
+      "satisfaction": "Satisfaction Rate"
+    }
+  },
+  "services": {
+    "title": "Our Medical Services",
+    "subtitle": "Comprehensive healthcare solutions delivered by our team of specialized physicians using the latest medical advancements.",
+    "laserHairRemoval": "Laser Hair Removal",
+    "laserHairRemovalDesc": "Advanced laser technology for permanent hair reduction with minimal discomfort and maximum results.",
+    "injectableTreatments": "Injectable Treatments",
+    "injectableTreatmentsDesc": "Expert administration of dermal fillers and neuromodulators for natural-looking facial rejuvenation.",
+    "skinRejuvenation": "Skin Rejuvenation",
+    "skinRejuvenationDesc": "Comprehensive treatments to restore skin vitality, texture, and luminosity using medical-grade procedures.",
+    "consultations": "Medical Consultations",
+    "consultationsDesc": "In-depth consultations with our specialists to develop personalized treatment plans.",
+    "discoverMore": "Discover More",
+    "viewAll": "View All Services",
+    "learnMore": "Learn More"
+  },
+  "team": {
+    "title": "Our Medical Team",
+    "subtitle": "Meet our team of four specialized physicians dedicated to providing exceptional care with scientific precision and compassionate service.",
+    "yearsExperience": "Years Experience",
+    "boardCertified": "Board Certified",
+    "doctors": {
+      "mitchell": {
+        "name": "Dr. Sarah Mitchell",
+        "specialty": "Dermatology & Aesthetic Medicine",
+        "bio": "Board-certified dermatologist with over 15 years of experience in medical and cosmetic dermatology. Specialized in advanced laser treatments and injectable procedures.",
+        "education": "MD, Harvard Medical School"
+      },
+      "chen": {
+        "name": "Dr. Michael Chen",
+        "specialty": "Plastic Surgery & Reconstruction",
+        "bio": "Renowned plastic surgeon specializing in facial rejuvenation and non-surgical aesthetic procedures. Known for natural-looking results and patient-centered care.",
+        "education": "MD, Johns Hopkins University"
+      },
+      "rodriguez": {
+        "name": "Dr. Emily Rodriguez",
+        "specialty": "Medical Aesthetics & Laser Therapy",
+        "bio": "Expert in cutting-edge laser technologies and minimally invasive aesthetic procedures. Committed to evidence-based treatments and optimal patient outcomes.",
+        "education": "MD, Stanford University"
+      },
+      "anderson": {
+        "name": "Dr. James Anderson",
+        "specialty": "Cosmetic Medicine & Injectables",
+        "bio": "Highly skilled in advanced injection techniques and facial anatomy. Focuses on personalized treatment plans that enhance natural beauty while maintaining facial harmony.",
+        "education": "MD, Yale School of Medicine"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Patient Testimonials",
+    "subtitle": "Read what our patients have to say about their experience with our medical team and the quality of care they received.",
+    "averageRating": "Average Rating",
+    "patientReviews": "Patient Reviews",
+    "wouldRecommend": "Would Recommend"
+  },
+  "cta": {
+    "title": "Ready to Begin Your Journey?",
+    "subtitle": "Schedule a consultation with one of our specialized physicians and discover how we can help you achieve your health and wellness goals.",
+    "bookDoctolib": "Book on Doctolib",
+    "call": "Call",
+    "availability": "Available Monday through Friday, 9:00 AM - 6:00 PM"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We're here to answer your questions and help you schedule your visit. Reach out to our team today.",
+    "getInTouch": "Get in Touch",
+    "location": "Location",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Opening Hours",
+    "directions": "Get Directions",
+    "weekday": "Monday - Friday: 9:00 AM - 6:00 PM",
+    "saturday": "Saturday: 10:00 AM - 4:00 PM",
+    "sunday": "Sunday: Closed",
+    "bookAppointment": "Book an Appointment Online",
+    "parking": "Parking Information",
+    "parkingInfo": "Free validated parking is available in the building's underground garage. Enter from Market Street and bring your ticket to reception for validation.",
+    "addressFull": "123 Medical Plaza, Suite 100, San Francisco, CA 94102, United States",
+    "phone_number": "(123) 456-7890",
+    "phone_hours": "Monday - Friday: 9:00 AM - 6:00 PM",
+    "email_address": "info@medicalexcellence.com",
+    "email_response": "We'll respond within 24 hours"
+  },
+  "footer": {
+    "description": "Premier medical center offering expert healthcare with four specialized physicians dedicated to your wellbeing.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "services": "Services",
+    "ourTeam": "Our Team",
+    "blog": "Blog",
+    "contact": "Contact",
+    "servicesTitle": "Services",
+    "laserHairRemoval": "Laser Hair Removal",
+    "injectableTreatments": "Injectable Treatments",
+    "skinRejuvenation": "Skin Rejuvenation",
+    "consultations": "Medical Consultations",
+    "contactUs": "Contact Us",
+    "schedule": "Mon-Fri: 9AM-6PM",
+    "copyright": "Medical Excellence Center. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "chat": {
+    "title": "Medical Assistant",
+    "greeting": "Hello! How can we help you today?",
+    "autoReply": "Thank you for your message. Our team will get back to you soon! For immediate assistance, please call us at (123) 456-7890.",
+    "placeholder": "Type a message...",
+    "errorTitle": "Error",
+    "errorMessage": "Failed to send message. Please try again."
+  },
+  "beforeAfter": {
+    "title": "Real Results",
+    "before": "Before",
+    "after": "After",
+    "of": "of"
+  },
+  "buttons": {
+    "book": "Book Now",
+    "learnMore": "Learn More",
+    "viewMore": "View More",
+    "send": "Send Message",
+    "cancel": "Cancel",
+    "submit": "Submit"
+  }
+}

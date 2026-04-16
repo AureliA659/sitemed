@@ -1,4 +1,6 @@
+import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
+import { locales, defaultLocale } from './i18n-config';
 
 // Simple in-memory store for rate limiting (replace with Redis in production)
 const requestCounts = new Map<string, { count: number; resetTime: number }>();
@@ -30,6 +32,13 @@ function isRateLimited(ip: string): boolean {
   return clientData.count > RATE_LIMIT_MAX_REQUESTS;
 }
 
+// Create the next-intl middleware
+const intlMiddleware = createMiddleware({
+  locales,
+  defaultLocale,
+  localePrefix: 'always',
+});
+
 export function middleware(request: NextRequest) {
   const ip = getClientIp(request);
 
@@ -42,7 +51,8 @@ export function middleware(request: NextRequest) {
   }
 
   // Protect /admin route
-  if (request.nextUrl.pathname.startsWith('/admin')) {
+  const pathname = request.nextUrl.pathname;
+  if (pathname.includes('/admin')) {
     const token = request.cookies.get('adminToken')?.value;
 
     if (!token) {
@@ -50,8 +60,8 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // Create response with security headers
-  const response = NextResponse.next();
+  // Apply next-intl middleware
+  const response = intlMiddleware(request);
 
   // Security Headers
   response.headers.set('X-Content-Type-Options', 'nosniff');

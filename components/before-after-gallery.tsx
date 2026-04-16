@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface BeforeAfterItem {
   id: string;
@@ -15,6 +16,7 @@ interface BeforeAfterGalleryProps {
 }
 
 export function BeforeAfterGallery({ serviceType }: BeforeAfterGalleryProps) {
+  const t = useTranslations('beforeAfter');
   const [items, setItems] = useState<BeforeAfterItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -65,7 +67,7 @@ export function BeforeAfterGallery({ serviceType }: BeforeAfterGalleryProps) {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-3xl font-bold">Real Results</h2>
+      <h2 className="text-3xl font-bold">{t('title')}</h2>
 
       {/* Gallery */}
       <div className="relative">
@@ -74,11 +76,11 @@ export function BeforeAfterGallery({ serviceType }: BeforeAfterGalleryProps) {
           <div className="relative bg-gray-100 rounded-lg overflow-hidden">
             <img
               src={currentItem.before_image_url}
-              alt="Before"
+              alt={t('before')}
               className="w-full h-96 object-cover"
             />
             <div className="absolute top-4 left-4 bg-black/70 text-white px-3 py-1 rounded text-sm font-semibold">
-              Before
+              {t('before')}
             </div>
           </div>
 
@@ -86,11 +88,11 @@ export function BeforeAfterGallery({ serviceType }: BeforeAfterGalleryProps) {
           <div className="relative bg-gray-100 rounded-lg overflow-hidden">
             <img
               src={currentItem.after_image_url}
-              alt="After"
+              alt={t('after')}
               className="w-full h-96 object-cover"
             />
             <div className="absolute top-4 left-4 bg-medical-blue/90 text-white px-3 py-1 rounded text-sm font-semibold">
-              After
+              {t('after')}
             </div>
           </div>
         </div>
@@ -142,7 +144,7 @@ export function BeforeAfterGallery({ serviceType }: BeforeAfterGalleryProps) {
       {/* Counter */}
       {items.length > 1 && (
         <div className="text-center text-sm text-gray-500">
-          {currentIndex + 1} of {items.length}
+          {currentIndex + 1} {t('of')} {items.length}
         </div>
       )}
     </div>

@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Star, Quote } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface Testimonial {
   id: string;
@@ -52,14 +53,15 @@ const testimonials: Testimonial[] = [
 ];
 
 export function TestimonialsSection() {
+  const t = useTranslations('testimonials');
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-medical-blue mb-4">Patient Testimonials</h2>
+          <h2 className="text-medical-blue mb-4">{t('title')}</h2>
           <p className="text-lg text-[#424242] max-w-2xl mx-auto">
-            Read what our patients have to say about their experience with our
-            medical team and the quality of care they received.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -108,14 +110,14 @@ export function TestimonialsSection() {
               <div className="text-4xl font-bold text-medical-blue mb-2">
                 4.9/5
               </div>
-              <div className="text-sm text-[#424242]">Average Rating</div>
+              <div className="text-sm text-[#424242]">{t('averageRating')}</div>
             </div>
             <div className="h-16 w-px bg-gray-200"></div>
             <div className="text-center">
               <div className="text-4xl font-bold text-medical-blue mb-2">
                 500+
               </div>
-              <div className="text-sm text-[#424242]">Patient Reviews</div>
+              <div className="text-sm text-[#424242]">{t('patientReviews')}</div>
             </div>
             <div className="h-16 w-px bg-gray-200"></div>
             <div className="text-center">
@@ -123,7 +125,7 @@ export function TestimonialsSection() {
                 98%
               </div>
               <div className="text-sm text-[#424242]">
-                Would Recommend
+                {t('wouldRecommend')}
               </div>
             </div>
           </div>
