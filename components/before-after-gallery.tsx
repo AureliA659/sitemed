@@ -25,7 +25,7 @@ export function BeforeAfterGallery({ serviceType }: BeforeAfterGalleryProps) {
     const fetchGallery = async () => {
       try {
         const response = await fetch(
-          `/api/before-after?serviceType=${serviceType}`
+          `${window.location.origin}/api/before-after?serviceType=${serviceType}`
         );
         if (!response.ok) throw new Error('Failed to fetch');
         const data = await response.json();
