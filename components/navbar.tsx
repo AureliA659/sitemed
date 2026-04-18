@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
-import { Calendar, Menu, X, ChevronDown } from 'lucide-react';
+import { Calendar, Menu, ChevronDown } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { LanguageSwitcher } from './language-switcher';
 
@@ -150,7 +150,7 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center space-x-7">
+          <div className="flex items-center gap-2 sm:gap-3">
             <LanguageSwitcher />
             
             <Button
@@ -168,52 +168,69 @@ export function Navbar() {
 
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden">
-                  {mobileMenuOpen ? (
-                    <X className="w-6 h-6" />
-                  ) : (
-                    <Menu className="w-6 h-6" />
-                  )}
+                <Button variant="ghost" size="icon" className="lg:hidden -mr-2">
+                  <Menu className="w-6 h-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80">
-                <div className="flex flex-col space-y-6 mt-8">
-                  <Button
-                    asChild
-                    className="w-full bg-medical-blue hover:bg-medical-blue-dark text-white"
-                  >
-                    <a href={process.env.NEXT_PUBLIC_DOCTOLIB_URL} target="_blank" rel="noopener noreferrer">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      {t('book')}
-                    </a>
-                  </Button>
-
-                  <div className="flex flex-col space-y-4">
-                    {navigationItems.map((item) => (
-                      <div key={item.label}>
-                        <Link
-                          href={item.href}
-                          className="text-lg font-medium text-[#212121] hover:text-medical-blue transition-colors block py-2"
-                          onClick={() => !item.children && setMobileMenuOpen(false)}
-                        >
-                          {item.label}
-                        </Link>
-                        {item.children && (
-                          <div className="ml-4 mt-2 space-y-2">
-                            {item.children.map((child) => (
-                              <Link
-                                key={child.href}
-                                href={child.href}
-                                className="block text-[#424242] hover:text-medical-blue transition-colors py-1"
-                                onClick={() => setMobileMenuOpen(false)}
-                              >
-                                {child.label}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
+              <SheetContent side="right" className="w-[85vw] max-w-sm p-0">
+                <div className="flex flex-col h-full">
+                  {/* Header */}
+                  <div className="flex items-center justify-between px-6 py-4 border-b">
+                    <div className="flex items-center space-x-2">
+                      <div className="flex items-center justify-center w-8 h-8 bg-medical-blue rounded-lg">
+                        <span className="text-white text-lg font-bold">M</span>
                       </div>
-                    ))}
+                      <span className="font-heading text-lg font-semibold text-[#212121]">
+                        Medical Excellence
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Navigation */}
+                  <div className="flex-1 overflow-y-auto px-6 py-6">
+                    <nav className="flex flex-col space-y-1">
+                      {navigationItems.map((item) => (
+                        <div key={item.label}>
+                          <Link
+                            href={item.href}
+                            className="flex items-center py-3 text-base font-medium text-[#212121] hover:text-medical-blue transition-colors border-b border-gray-100"
+                            onClick={() => !item.children && setMobileMenuOpen(false)}
+                          >
+                            {item.label}
+                            {item.children && (
+                              <ChevronDown className="w-4 h-4 ml-auto text-gray-400" />
+                            )}
+                          </Link>
+                          {item.children && (
+                            <div className="ml-4 mb-2">
+                              {item.children.map((child) => (
+                                <Link
+                                  key={child.href}
+                                  href={child.href}
+                                  className="block py-2.5 text-sm text-[#616161] hover:text-medical-blue transition-colors"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  {child.label}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </nav>
+                  </div>
+
+                  {/* Footer CTA */}
+                  <div className="px-6 py-5 border-t bg-gray-50">
+                    <Button
+                      asChild
+                      className="w-full bg-medical-blue hover:bg-medical-blue-dark text-white h-12 text-base"
+                    >
+                      <a href={process.env.NEXT_PUBLIC_DOCTOLIB_URL} target="_blank" rel="noopener noreferrer">
+                        <Calendar className="w-5 h-5 mr-2" />
+                        {t('book')}
+                      </a>
+                    </Button>
                   </div>
                 </div>
               </SheetContent>
