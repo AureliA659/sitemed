@@ -59,11 +59,16 @@ export function ServicesCarousel() {
   const t = useTranslations('services');
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-24 bg-taupe">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-medical-blue mb-4">{t('title')}</h2>
-          <p className="text-lg text-[#424242] max-w-2xl mx-auto">
+        <div className="text-center mb-14">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <span className="block w-8 h-px bg-gold"></span>
+            <span className="label-luxury">Nos soins</span>
+            <span className="block w-8 h-px bg-gold"></span>
+          </div>
+          <h2 className="text-charcoal mb-4">{t('title')}</h2>
+          <p className="text-warm-gray max-w-2xl mx-auto">
             {t('subtitle')}
           </p>
         </div>
@@ -81,7 +86,7 @@ export function ServicesCarousel() {
                 key={service.id}
                 className="pl-4 md:basis-1/2 lg:basis-1/3"
               >
-                <Card className="h-full group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
+                <Card className="h-full group hover:shadow-xl transition-all duration-500 border border-gold/15 overflow-hidden rounded-none bg-white">
                   <CardContent className="p-0">
                     <div className="relative h-56 overflow-hidden">
                       <img
@@ -92,18 +97,18 @@ export function ServicesCarousel() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-heading font-semibold text-[#212121] mb-3">
+                      <h3 className="text-lg font-heading font-normal text-charcoal mb-2">
                         {t(service.titleKey)}
                       </h3>
-                      <p className="text-[#424242] mb-4 leading-relaxed">
+                      <p className="text-warm-gray text-sm mb-5 leading-relaxed">
                         {t(service.descKey)}
                       </p>
                       <Link
                         href={service.href}
-                        className="inline-flex items-center text-medical-blue hover:text-medical-blue-dark font-medium transition-colors group/link"
+                        className="inline-flex items-center text-gold hover:text-gold-dark text-sm tracking-wide transition-colors group/link"
                       >
                         {t('discoverMore')}
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-3.5 h-3.5 ml-2 group-hover/link:translate-x-1 transition-transform" />
                       </Link>
                     </div>
                   </CardContent>
@@ -118,10 +123,10 @@ export function ServicesCarousel() {
         <div className="text-center mt-12">
           <Link
             href="/services"
-            className="inline-flex items-center text-medical-blue hover:text-medical-blue-dark font-semibold text-lg transition-colors group"
+            className="inline-flex items-center text-charcoal hover:text-gold font-sans text-sm tracking-widest uppercase transition-colors duration-300 group"
           >
             {t('viewAll')}
-            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>

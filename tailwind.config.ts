@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-montserrat)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-dm-sans)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-cormorant)', 'Georgia', 'serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -26,20 +26,41 @@ const config: Config = {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        gold: {
+          DEFAULT: '#C9A96E',
+          light: '#EDD9BB',
+          dark: '#A8834A',
+        },
+        ivory: {
+          DEFAULT: '#FAF7F4',
+          dark: '#F0EBE5',
+        },
+        taupe: {
+          DEFAULT: '#F0EBE5',
+          dark: '#D4C5B9',
+        },
+        charcoal: {
+          DEFAULT: '#1C1C1E',
+          dark: '#111010',
+        },
+        'warm-gray': {
+          DEFAULT: '#6B6560',
+          light: '#A09890',
+        },
         'medical-blue': {
-          DEFAULT: '#1976D2',
-          light: '#2196F3',
-          dark: '#0D47A1',
+          DEFAULT: '#C9A96E',
+          light: '#EDD9BB',
+          dark: '#A8834A',
         },
         'health-green': {
-          DEFAULT: '#4CAF50',
-          light: '#66BB6A',
-          dark: '#388E3C',
+          DEFAULT: '#C9A96E',
+          light: '#EDD9BB',
+          dark: '#A8834A',
         },
         'medical-gray': {
-          DEFAULT: '#B0BEC5',
-          light: '#CFD8DC',
-          dark: '#78909C',
+          DEFAULT: '#A09890',
+          light: '#C5BDB8',
+          dark: '#6B6560',
         },
         card: {
           DEFAULT: 'hsl(var(--card))',

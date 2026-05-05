@@ -47,11 +47,16 @@ export function MedicalTeam() {
   const t = useTranslations('team');
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-medical-blue mb-4">{t('title')}</h2>
-          <p className="text-lg text-[#424242] max-w-2xl mx-auto">
+        <div className="text-center mb-14">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <span className="block w-8 h-px bg-gold"></span>
+            <span className="label-luxury">Notre équipe</span>
+            <span className="block w-8 h-px bg-gold"></span>
+          </div>
+          <h2 className="text-charcoal mb-4">{t('title')}</h2>
+          <p className="text-warm-gray max-w-2xl mx-auto">
             {t('subtitle')}
           </p>
         </div>
@@ -60,7 +65,7 @@ export function MedicalTeam() {
           {doctors.map((doctor) => (
             <Card
               key={doctor.id}
-              className="group hover:shadow-2xl transition-all duration-300 border-0 overflow-hidden"
+              className="group hover:shadow-xl transition-all duration-300 border border-gold/10 overflow-hidden rounded-none"
             >
               <CardContent className="p-0">
                 <div className="relative h-80 overflow-hidden">
@@ -74,27 +79,27 @@ export function MedicalTeam() {
                     <h3 className="text-xl font-heading font-semibold mb-1">
                       {t(`doctors.${doctor.key}.name`)}
                     </h3>
-                    <p className="text-sm text-white/90">{t(`doctors.${doctor.key}.specialty`)}</p>
+                    <p className="text-xs text-white/80 tracking-wide">{t(`doctors.${doctor.key}.specialty`)}</p>
                   </div>
                 </div>
 
                 <div className="p-6 space-y-4">
-                  <p className="text-[#424242] text-sm leading-relaxed">
+                  <p className="text-warm-gray text-sm leading-relaxed">
                     {t(`doctors.${doctor.key}.bio`)}
                   </p>
 
-                  <div className="space-y-2 pt-4 border-t border-gray-100">
-                    <div className="flex items-center text-sm text-[#424242]">
-                      <GraduationCap className="w-4 h-4 mr-2 text-medical-blue" />
+                  <div className="space-y-2 pt-4 border-t border-gold/10">
+                    <div className="flex items-center text-sm text-warm-gray">
+                      <GraduationCap className="w-4 h-4 mr-2 text-gold" />
                       <span>{t(`doctors.${doctor.key}.education`)}</span>
                     </div>
-                    <div className="flex items-center text-sm text-[#424242]">
-                      <Award className="w-4 h-4 mr-2 text-health-green" />
+                    <div className="flex items-center text-sm text-warm-gray">
+                      <Award className="w-4 h-4 mr-2 text-gold" />
                       <span>{doctor.yearsExperience}+ {t('yearsExperience')}</span>
                     </div>
                   </div>
 
-                  <Badge className="bg-medical-blue/10 text-medical-blue hover:bg-medical-blue/20 border-0">
+                  <Badge className="bg-gold/10 text-gold-dark hover:bg-gold/20 border-0 rounded-none text-[10px] tracking-wider uppercase">
                     {t('boardCertified')}
                   </Badge>
                 </div>

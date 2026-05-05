@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
-import { Inter, Montserrat } from 'next/font/google';
+import { Cormorant_Garamond, DM_Sans } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import './globals.css';
 
-const inter = Inter({
+const cormorantGaramond = Cormorant_Garamond({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-cormorant',
   display: 'swap',
+  weight: ['300', '400', '500', '600', '700'],
 });
 
-const montserrat = Montserrat({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-montserrat',
+  variable: '--font-dm-sans',
   display: 'swap',
 });
 
@@ -31,7 +32,7 @@ export default async function RootLayout({
 
   return (
     <html suppressHydrationWarning>
-      <body className={`${inter.className} ${inter.variable} ${montserrat.variable}`}>
+      <body className={`${dmSans.className} ${dmSans.variable} ${cormorantGaramond.variable}`}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

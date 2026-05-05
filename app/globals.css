@@ -4,31 +4,31 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 210 11% 13%;
+    --background: 30 43% 97%;
+    --foreground: 240 2% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 210 11% 13%;
+    --card-foreground: 240 2% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 210 11% 13%;
-    --primary: 207 90% 46%;
+    --popover-foreground: 240 2% 11%;
+    --primary: 37 47% 61%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 122 39% 49%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 200 18% 92%;
-    --muted-foreground: 200 18% 46%;
-    --accent: 122 39% 49%;
-    --accent-foreground: 0 0% 100%;
+    --secondary: 25 27% 92%;
+    --secondary-foreground: 240 2% 11%;
+    --muted: 25 27% 95%;
+    --muted-foreground: 20 7% 40%;
+    --accent: 35 63% 83%;
+    --accent-foreground: 240 2% 11%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 207 90% 46%;
-    --chart-1: 207 90% 54%;
-    --chart-2: 122 39% 49%;
-    --chart-3: 200 18% 46%;
+    --border: 25 30% 88%;
+    --input: 25 30% 88%;
+    --ring: 37 47% 61%;
+    --chart-1: 37 47% 61%;
+    --chart-2: 25 27% 65%;
+    --chart-3: 20 7% 50%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --radius: 0.375rem;
   }
 }
 
@@ -42,20 +42,20 @@
   }
 
   body {
-    @apply bg-white text-[#212121] antialiased;
+    @apply bg-ivory text-charcoal antialiased overflow-x-hidden;
     font-feature-settings: 'liga' 1, 'calt' 1;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-semibold;
+    @apply font-heading;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight font-light;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight tracking-tight font-light;
   }
 
   h3 {
@@ -70,5 +70,13 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .label-luxury {
+    @apply text-[11px] tracking-[0.25em] uppercase font-sans font-medium text-gold;
+  }
+
+  .divider-gold {
+    @apply inline-block w-16 h-px bg-gold;
   }
 }

@@ -56,11 +56,16 @@ export function TestimonialsSection() {
   const t = useTranslations('testimonials');
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-24 bg-ivory">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-medical-blue mb-4">{t('title')}</h2>
-          <p className="text-lg text-[#424242] max-w-2xl mx-auto">
+        <div className="text-center mb-14">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <span className="block w-8 h-px bg-gold"></span>
+            <span className="label-luxury">Témoignages</span>
+            <span className="block w-8 h-px bg-gold"></span>
+          </div>
+          <h2 className="text-charcoal mb-4">{t('title')}</h2>
+          <p className="text-warm-gray max-w-2xl mx-auto">
             {t('subtitle')}
           </p>
         </div>
@@ -69,7 +74,7 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <Card
               key={testimonial.id}
-              className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="border border-gold/10 shadow-none hover:shadow-md transition-shadow duration-300 rounded-none bg-white"
             >
               <CardContent className="p-8">
                 <div className="flex items-center justify-between mb-6">
@@ -77,27 +82,27 @@ export function TestimonialsSection() {
                     {Array.from({ length: testimonial.rating }).map((_, i) => (
                       <Star
                         key={i}
-                        className="w-5 h-5 fill-health-green text-health-green"
+                        className="w-4 h-4 fill-gold text-gold"
                       />
                     ))}
                   </div>
-                  <Quote className="w-8 h-8 text-medical-blue/20" />
+                  <Quote className="w-8 h-8 text-gold/25" />
                 </div>
 
-                <p className="text-[#424242] leading-relaxed mb-6">
+                <p className="text-warm-gray leading-relaxed mb-6 text-sm">
                   {testimonial.comment}
                 </p>
 
-                <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+                <div className="flex items-center justify-between pt-5 border-t border-gold/10">
                   <div>
-                    <p className="font-semibold text-[#212121]">
+                    <p className="font-heading font-normal text-charcoal">
                       {testimonial.name}
                     </p>
-                    <p className="text-sm text-[#424242]">
+                    <p className="text-xs text-warm-gray">
                       {testimonial.treatment}
                     </p>
                   </div>
-                  <p className="text-sm text-medical-gray">{testimonial.date}</p>
+                  <p className="text-xs text-warm-gray/60">{testimonial.date}</p>
                 </div>
               </CardContent>
             </Card>
@@ -105,26 +110,28 @@ export function TestimonialsSection() {
         </div>
 
         <div className="text-center mt-12">
-          <div className="inline-flex items-center justify-center gap-8 p-8 bg-white rounded-lg shadow-md">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 p-8 sm:p-10 bg-charcoal rounded-none max-w-xl sm:max-w-none mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-medical-blue mb-2">
+              <div className="text-3xl sm:text-4xl font-heading font-light text-gold mb-2">
                 4.9/5
               </div>
-              <div className="text-sm text-[#424242]">{t('averageRating')}</div>
+              <div className="text-xs text-white/40 tracking-wider uppercase">{t('averageRating')}</div>
             </div>
-            <div className="h-16 w-px bg-gray-200"></div>
+            <div className="hidden sm:block h-16 w-px bg-gold/20 mx-auto"></div>
+            <div className="border-t sm:hidden border-gold/15"></div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-medical-blue mb-2">
+              <div className="text-3xl sm:text-4xl font-heading font-light text-gold mb-2">
                 500+
               </div>
-              <div className="text-sm text-[#424242]">{t('patientReviews')}</div>
+              <div className="text-xs text-white/40 tracking-wider uppercase">{t('patientReviews')}</div>
             </div>
-            <div className="h-16 w-px bg-gray-200"></div>
+            <div className="hidden sm:block h-16 w-px bg-gold/20 mx-auto"></div>
+            <div className="border-t sm:hidden border-gold/15"></div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-medical-blue mb-2">
+              <div className="text-3xl sm:text-4xl font-heading font-light text-gold mb-2">
                 98%
               </div>
-              <div className="text-sm text-[#424242]">
+              <div className="text-xs text-white/40 tracking-wider uppercase">
                 {t('wouldRecommend')}
               </div>
             </div>

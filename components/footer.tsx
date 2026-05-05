@@ -8,32 +8,34 @@ export function Footer() {
   const t = useTranslations('footer');
 
   return (
-    <footer className="bg-[#212121] text-white">
+    <footer className="bg-charcoal-dark text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="flex items-center justify-center w-10 h-10 bg-medical-blue rounded-lg">
-                <span className="text-white text-xl font-bold">M</span>
+            <div className="mb-5">
+              <div className="flex flex-col leading-none">
+                <span className="font-heading text-[14px] font-semibold tracking-[0.18em] text-white uppercase">
+                  Medical
+                </span>
+                <span className="font-heading text-[14px] font-light tracking-[0.35em] text-gold uppercase">
+                  Excellence
+                </span>
               </div>
-              <span className="font-heading text-xl font-semibold">
-                Medical Excellence
-              </span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-white/40 text-sm leading-relaxed">
               {t('description')}
             </p>
           </div>
 
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">
+            <h4 className="font-heading font-normal text-sm tracking-[0.15em] uppercase text-white/60 mb-4">
               {t('quickLinks')}
             </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/"
-                  className="text-gray-400 hover:text-health-green transition-colors"
+                  className="text-white/40 hover:text-gold transition-colors text-sm"
                 >
                   {t('home')}
                 </Link>
@@ -41,7 +43,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services"
-                  className="text-gray-400 hover:text-health-green transition-colors"
+                  className="text-white/40 hover:text-gold transition-colors text-sm"
                 >
                   {t('services')}
                 </Link>
@@ -49,7 +51,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/team"
-                  className="text-gray-400 hover:text-health-green transition-colors"
+                  className="text-white/40 hover:text-gold transition-colors text-sm"
                 >
                   {t('ourTeam')}
                 </Link>
@@ -57,7 +59,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="text-gray-400 hover:text-health-green transition-colors"
+                  className="text-white/40 hover:text-gold transition-colors text-sm"
                 >
                   {t('blog')}
                 </Link>
@@ -65,7 +67,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-gray-400 hover:text-health-green transition-colors"
+                  className="text-white/40 hover:text-gold transition-colors text-sm"
                 >
                   {t('contact')}
                 </Link>
@@ -74,14 +76,14 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">
+            <h4 className="font-heading font-normal text-sm tracking-[0.15em] uppercase text-white/60 mb-4">
               {t('servicesTitle')}
             </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/services/laser-hair-removal"
-                  className="text-gray-400 hover:text-health-green transition-colors"
+                  className="text-white/40 hover:text-gold transition-colors text-sm"
                 >
                   {t('laserHairRemoval')}
                 </Link>
@@ -89,7 +91,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/injectable-treatments"
-                  className="text-gray-400 hover:text-health-green transition-colors"
+                  className="text-white/40 hover:text-gold transition-colors text-sm"
                 >
                   {t('injectableTreatments')}
                 </Link>
@@ -97,7 +99,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/skin-rejuvenation"
-                  className="text-gray-400 hover:text-health-green transition-colors"
+                  className="text-white/40 hover:text-gold transition-colors text-sm"
                 >
                   {t('skinRejuvenation')}
                 </Link>
@@ -105,7 +107,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/services/consultations"
-                  className="text-gray-400 hover:text-health-green transition-colors"
+                  className="text-white/40 hover:text-gold transition-colors text-sm"
                 >
                   {t('consultations')}
                 </Link>
@@ -114,59 +116,59 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-4">
+            <h4 className="font-heading font-normal text-sm tracking-[0.15em] uppercase text-white/60 mb-4">
               {t('contactUs')}
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-health-green mt-0.5 flex-shrink-0" />
-                <span className="text-gray-400 text-sm">
+                <MapPin className="w-4 h-4 text-gold/60 mt-0.5 flex-shrink-0" />
+                <span className="text-white/40 text-sm">
                   211 boulevard Bineau
                   <br />
                   92200 Neuilly-sur-Seine
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-health-green flex-shrink-0" />
+                <Phone className="w-4 h-4 text-gold/60 flex-shrink-0" />
                 <a
                   href="tel:+1234567890"
-                  className="text-gray-400 hover:text-health-green transition-colors text-sm"
+                  className="text-white/40 hover:text-gold transition-colors text-sm"
                 >
                   (123) 456-7890
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-health-green flex-shrink-0" />
+                <Mail className="w-4 h-4 text-gold/60 flex-shrink-0" />
                 <a
                   href="mailto:info@medicalexcellence.com"
-                  className="text-gray-400 hover:text-health-green transition-colors text-sm"
+                  className="text-white/40 hover:text-gold transition-colors text-sm"
                 >
                   info@medicalexcellence.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <Calendar className="w-5 h-5 text-health-green flex-shrink-0" />
-                <span className="text-gray-400 text-sm">{t('schedule')}</span>
+                <Calendar className="w-4 h-4 text-gold/60 flex-shrink-0" />
+                <span className="text-white/40 text-sm">{t('schedule')}</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-gray-800">
+        <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
+            <p className="text-white/30 text-sm">
               &copy; 2024 {t('copyright')}
             </p>
             <div className="flex gap-6">
               <Link
                 href="/privacy"
-                className="text-gray-400 hover:text-health-green transition-colors text-sm"
+                className="text-white/30 hover:text-gold transition-colors text-sm"
               >
                 {t('privacy')}
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-400 hover:text-health-green transition-colors text-sm"
+                className="text-white/30 hover:text-gold transition-colors text-sm"
               >
                 {t('terms')}
               </Link>
